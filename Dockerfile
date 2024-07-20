@@ -1,7 +1,7 @@
-# Utiliza la imagen base de PHP
+# Utiliza la imagen base de PHP 8.1 FPM
 FROM php:8.1-fpm
 
-# Instala dependencias
+# Instala dependencias necesarias
 RUN apt-get update \
     && apt-get install -y \
        git \
@@ -15,14 +15,19 @@ WORKDIR /var/www/html
 # Copia los archivos del proyecto Laravel al contenedor
 COPY . .
 
-# Instala las dependencias de Composer
+# Copia el archivo .env.example y renómbralo a .env
+COPY .env.example .env
+
+# Instala Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN composer install
+
+# Instala las dependencias de Composer
+RUN composer install --no-dev --optimize-autoloader
 
 # Genera la clave de cifrado de Laravel
 RUN php artisan key:generate
 
-# Expone el puerto 8000
+# Exponer el puerto 8000
 EXPOSE 8000
 
 # Comando por defecto para ejecutar el servidor web
