@@ -10,9 +10,9 @@
 ## Probar Swapi Inventory
 
 1. **Generar las imágenes y levantar los contenedores:**
-   En la carpeta del proyecto generar las imagenes y levantar los contenedores command = sudo docker compose up --build (contenedores = swapi-inventory-app, phpmyadmin/phpmyadmin, mysql:8.0).
+   En la carpeta del proyecto generar las imagenes y levantar los contenedores command = sudo docker compose up --build (contenedores = swapi_inventory-app, phpmyadmin/phpmyadmin, mysql:8.0).
 2. **Instalar dependencias y migrar la base de datos:**
-   Dentro del contendor de swapi-inventory-app en la carpeta raiz composer install - php artisan migrate --seed.
+   Dentro del contendor de swapi_inventory-app en la carpeta raiz composer install - php artisan migrate --seed.
 3. **Instalar dependencias locales:**
    En la carpeta del proyecto Local ejecutar npm install.
 4. **Configurar el archivo de entorno:**
