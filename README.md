@@ -9,10 +9,17 @@
 
 ## Probar Swapi Inventory
 
-1 En la carpeta del proyecto generar las imagenes y levantar los contenedores command = sudo docker compose up --build (contenedores = swapi-inventory-app, phpmyadmin/phpmyadmin, mysql:8.0).
-2 Dentro del contendor de swapi-inventory-app en la carpeta raiz composer install - php artisan migrate --seed.
-3 En la carpeta del proyecto Local ejecutar npm install.
-4 En la carpeta del proyecto Local ejecutar cp .env.example .env.
-5 Ver el Front con npm run dev (http://localhost:5173/).
-6 Ver el Back con php artisan serve (http://127.0.0.1:8000).
-7 El phpmyadmin estara en http://127.0.0.1:8080/.
+1. **Generar las imágenes y levantar los contenedores:**
+   En la carpeta del proyecto generar las imagenes y levantar los contenedores command = sudo docker compose up --build (contenedores = swapi-inventory-app, phpmyadmin/phpmyadmin, mysql:8.0).
+2. **Instalar dependencias y migrar la base de datos:**
+   Dentro del contendor de swapi-inventory-app en la carpeta raiz composer install - php artisan migrate --seed.
+3. **Instalar dependencias locales:**
+   En la carpeta del proyecto Local ejecutar npm install.
+4. **Configurar el archivo de entorno:**
+   En la carpeta del proyecto Local ejecutar cp .env.example .env.
+5. **Ver el frontend:**
+   Ver el Front con npm run dev (http://localhost:5173/).
+6. **Ver el backend:**
+   Ver el Back con php artisan serve (http://127.0.0.1:8000).
+7. **Acceder a phpMyAdmin:**
+   El phpmyadmin estara en http://127.0.0.1:8080/.
